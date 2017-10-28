@@ -51,7 +51,7 @@ library(lattice)
 xyplot(steps ~ interval | factor(day), data = steps.interval, aspect = 1/2, 
        type = "l")
 
-
+RepData_PeerAssessment1/plot2.png
 
 
 
