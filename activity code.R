@@ -1,8 +1,7 @@
-k<-read.csv(".U:\Users\Kyra Hull\Documents\R/activity.csv", stringsAsFactors = FALSE)
-
-library(dplyr)
+ctivity <- read_csv("~/R/UCI HAR Dataset.csv/activity.csv")
+View(activity)
 #steps per day
-total.steps <- aggregate(steps ~ date, data = k, sum, na.rm = TRUE)
+total.steps <- aggregate(steps ~ date, data = activity , sum, na.rm = TRUE)
 hist(total.steps$steps,col="red",
       main="Histogram of Total Steps taken per day",xlab="Total Steps taken per day",cex.axis=1,cex.lab = 1)
 ##What is mean/median total number of steps taken per day? 10766 & 10765
@@ -20,7 +19,7 @@ max.step<-max(steps_interval$average_steps)
 ##Imputing missing values
 ## 2304 total number of missing values
 missing_rows <- sum(!complete.cases(k))
-complete.k <- k
+complete.k <- activity
 
 MedianStepsPerInterval <- function(interval){
   steps_interval[steps_interval$interval==interval,"steps"]
@@ -51,7 +50,7 @@ library(lattice)
 xyplot(steps ~ interval | factor(day), data = steps.interval, aspect = 1/2, 
        type = "l")
 
-RepData_PeerAssessment1/plot2.png
+
 
 
 
