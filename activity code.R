@@ -50,7 +50,7 @@ library(lattice)
 xyplot(steps ~ interval | factor(day), data = steps.interval, aspect = 1/2, 
        type = "l")
 
-
+ 
 
 
 
